@@ -1,7 +1,27 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap');
 
-:root { font-family: 'DM Sans', sans-serif; color: #2c1607; background: #e8d56c; font-synthesis: none; text-rendering: optimizeLegibility; -webkit-font-smoothing: antialiased; }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body { min-width: 320px; margin: 0; }
-a { color: inherit; }
+:root {
+    font-family: 'DM Sans', sans-serif;
+    color: #2c1607;
+    background: #e8d56c;
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-width: 320px;
+    margin: 0;
+}
+
+a {
+    color: inherit;
+}

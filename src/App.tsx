@@ -2,6 +2,7 @@ import Flipbook from './Flipbook'
 import './App.css'
 
 const pdfPath = '/Cuentos_Imagen_Polisemica.pdf'
+const imagePath = '/image.png'
 
 const contributors = [
   { name: 'Jhon Doe', role: 'Idea & palabras', href: 'https://www.linkedin.com/' },
@@ -29,36 +30,25 @@ function App() {
 
       <section className="hero" id="inicio" aria-labelledby="page-title">
         <div className="hero__copy">
-          <p className="eyebrow">Un ensayo visual · edición digital</p>
+          <p className="eyebrow">Pensamiento crítico · Sección FCV0</p>
           <h1 id="page-title">Llanta,<br /><em>sillón</em><br />y traje.</h1>
-          <p className="hero__lede">Tres objetos se sientan a conversar. O tal vez no son objetos. Abre el libro y decide qué estás viendo.</p>
+          <p className="hero__lede">Antología de relatos sobre percepción y pensamiento crítico.</p>
           <a className="text-link" href="#introduccion">Antes de abrir <ArrowIcon /></a>
         </div>
 
         <div className="hero__collage" aria-label="Collage decorativo surrealista">
-          <div className="sunburst" />
-          <p className="collage-note collage-note--top">un asiento<br />para la duda</p>
-          <div className="suit-figure">
-            <div className="suit-figure__head"><span /></div>
-            <div className="suit-figure__neck" />
-            <div className="suit-figure__body"><i /><b /></div>
-            <div className="suit-figure__leg suit-figure__leg--left" />
-            <div className="suit-figure__leg suit-figure__leg--right" />
-          </div>
-          <div className="wheel" aria-hidden="true"><span /><i /><b /></div>
-          <div className="couch" aria-hidden="true"><span /><i /><b /></div>
-          <p className="collage-note collage-note--bottom">nada encaja<br />por accidente</p>
+          <img src={imagePath} alt="" />
         </div>
 
-        <aside className="hero__side-label">PENSAMIENTO<br />CRÍTICO<br /><span>2026</span></aside>
+        <aside className="hero__side-label">PENSAMIENTO<br />CRÍTICO<br /><span>C2 2026</span></aside>
       </section>
 
       <section className="introduction" id="introduccion" aria-labelledby="intro-title">
         <div className="section-marker">I<br /><span>El umbral</span></div>
         <div className="introduction__body">
           <p className="eyebrow">Antes de pasar página</p>
-          <h2 id="intro-title">Una introducción que todavía<br /><em>está por escribirse.</em></h2>
-          <p className="placeholder-copy">[Este espacio está reservado para una breve introducción al libro: una invitación a mirar lo cotidiano desde otro ángulo, a detenerse ante las imágenes y a cuestionar las asociaciones que damos por hechas.]</p>
+          <h2 id="intro-title">Una introducción a <br /><em>estas historias.</em></h2>
+          <p className="placeholder-copy">Como parte del Curso de Pensamiento Crítico de la Universidad CENFOTEC, se se hizo una actividad de escribir un cuento en base a una imagen polisemica, estos son los productos de esa actividad </p>
         </div>
         <div className="stamp">LEER<br />SIN<br />PRISA</div>
       </section>
