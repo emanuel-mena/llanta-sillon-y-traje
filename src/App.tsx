@@ -1,5 +1,6 @@
 import Flipbook from './Flipbook'
-import { FaGithub, FaLinkedinIn } from 'react-icons/fa6'
+import { ContributorBadge } from './components/ContributorBadge'
+import { FaGithub } from 'react-icons/fa6'
 import { LuArrowDown, LuArrowDownRight } from 'react-icons/lu'
 import './App.css'
 
@@ -7,9 +8,9 @@ const pdfPath = '/Cuentos_Imagen_Polisemica.pdf'
 const imagePath = '/image.png'
 
 const contributors = [
-  { name: 'Jhon Doe', role: 'Idea & palabras', href: 'https://www.linkedin.com/' },
-  { name: 'Jhon Doe', role: 'Mirada & montaje', href: 'https://www.linkedin.com/' },
-  { name: 'Jhon Doe', role: 'Diseño & código', href: 'https://www.linkedin.com/' },
+  { name: 'Max Alonso Guzman Rodriguez', role: 'Editor Principal', href: 'https://www.linkedin.com/in/max-alonso-guzman-rodriguez-a99b71336/', photo : 'https://media.licdn.com/dms/image/v2/D4E03AQGRwNI2PqeJWg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1731169789640?e=1787184000&v=beta&t=O2V51AyDo-O2y-bv6U7mpbKAYI5QEcYxyUedVcXODdU' },
+  { name: 'Fabián Vargas Hidalgo', role: 'Editor Auxiliar', href: 'https://www.linkedin.com/in/fabianvh/', photo: 'https://media.licdn.com/dms/image/v2/D4D03AQFazXjlg0rXag/profile-displayphoto-shrink_800_800/B4DZSPlYmRG4Ac-/0/1737575730860?e=1787184000&v=beta&t=kqE0QfCJ-9pQk0NYcxxWgwxJ7XIbAWflaHVaUvu6IP4'},
+  { name: 'Emanuel Mena Araya', role: 'Diseñador', href: 'https://www.linkedin.com/in/emanuel-mena-araya/', photo : 'https://media.licdn.com/dms/image/v2/D4E03AQEMguF9QZ-Bwg/profile-displayphoto-crop_800_800/B4EZ6aJNQ5JEAI-/0/1780702569721?e=1787184000&v=beta&t=CeC4hySCmfHLyMdsCxKZCuI5q_RRbEWwKHfvCRQlc3s' },
 ]
 
 function ArrowIcon() {
@@ -24,7 +25,7 @@ function App() {
         <div className="topbar__links">
           <a href="#libro">El libro</a>
           <a href="#creditos">Créditos</a>
-          <a className="topbar__github" href="https://github.com/placeholder" target="_blank" rel="noreferrer">
+          <a className="topbar__github" href="https://github.com/emanuel-mena/llanta-sillon-y-traje" target="_blank" rel="noreferrer">
             <FaGithub aria-hidden="true" /> Repositorio
           </a>
         </div>
@@ -80,11 +81,7 @@ function App() {
         </div>
         <div className="contributor-list">
           {contributors.map((contributor, index) => (
-            <a className="contributor" href={contributor.href} target="_blank" rel="noreferrer" key={`${contributor.name}-${index}`}>
-              <span className="contributor__number">0{index + 1}</span>
-              <span><strong>{contributor.name}</strong><small>{contributor.role}</small></span>
-              <span className="linkedin"><FaLinkedinIn aria-hidden="true" /></span>
-            </a>
+            <ContributorBadge key={`${contributor.name}-${index}`} index={index} name={contributor.name} role={contributor.role} linkedinUrl={contributor.href} photoUrl={contributor.photo} />
           ))}
         </div>
         <div className="credits__bottom">

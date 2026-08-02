@@ -364,6 +364,38 @@ h2 em {
     background: rgba(94, 45, 2, .13);
 }
 
+.contributor--disabled {
+    cursor: default;
+}
+
+.contributor__identity {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 0;
+}
+
+.contributor__avatar {
+    width: 52px;
+    height: 52px;
+    flex: 0 0 52px;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+    border: 1px solid rgba(244, 228, 160, .75);
+    border-radius: 50%;
+    background: #5e2d02;
+    color: #f4e4a0;
+    font-family: 'DM Mono', monospace;
+    font-size: .72rem;
+}
+
+.contributor__avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .contributor__number,
 .linkedin {
     font-family: 'DM Mono', monospace;
@@ -476,6 +508,20 @@ h2 em {
 
     .contributor {
         grid-template-columns: 44px 1fr auto;
+    }
+
+    .contributor__identity {
+        gap: .7rem;
+    }
+
+    .contributor__avatar {
+        width: 42px;
+        height: 42px;
+        flex-basis: 42px;
+    }
+
+    .contributor strong {
+        font-size: 1.45rem;
     }
 
     .book-frame ._df_book {
