@@ -48,6 +48,10 @@
     transition: .2s;
 }
 
+.topbar__github svg {
+    font-size: .9rem;
+}
+
 .topbar__github:hover {
     background: #5e2d02;
     color: #e8d56c;
@@ -118,6 +122,7 @@ h2 em {
 .arrow-icon {
     color: #b63c14;
     font-size: 1.25rem;
+    flex: none;
     transition: transform .2s;
 }
 
@@ -140,7 +145,9 @@ h2 em {
 }
 
 .hero__collage {
-    min-height: 465px;
+    width: 100%;
+    aspect-ratio: 1;
+    align-self: center;
     position: relative;
     border: 1px solid rgba(94, 45, 2, .4);
     background: #ccbc63;
@@ -160,9 +167,11 @@ h2 em {
     z-index: 5;
 }
 
-.hero__collage img{
-    width: auto;
+.hero__collage img {
+    width: 100%;
     height: 100%;
+    display: block;
+    object-fit: cover;
     image-rendering:optimizeQuality;
 }
 
@@ -280,8 +289,8 @@ h2 em {
 }
 
 .download-button__icon {
-    font-family: Arial, sans-serif;
     font-size: 1.6rem;
+    flex: none;
 }
 
 .download-button b {
@@ -385,6 +394,7 @@ h2 em {
     height: 28px;
     display: grid;
     place-items: center;
+    place-items: center;
     font-weight: 500;
 }
 
@@ -415,7 +425,6 @@ h2 em {
 
     .hero__collage {
         order: -1;
-        min-height: 360px;
         max-width: 500px;
         width: 92%;
         justify-self: end;

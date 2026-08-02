@@ -1,4 +1,6 @@
 import Flipbook from './Flipbook'
+import { FaGithub, FaLinkedinIn } from 'react-icons/fa6'
+import { LuArrowDown, LuArrowDownRight } from 'react-icons/lu'
 import './App.css'
 
 const pdfPath = '/Cuentos_Imagen_Polisemica.pdf'
@@ -11,7 +13,7 @@ const contributors = [
 ]
 
 function ArrowIcon() {
-  return <span aria-hidden="true" className="arrow-icon">↘</span>
+  return <LuArrowDownRight aria-hidden="true" className="arrow-icon" />
 }
 
 function App() {
@@ -23,7 +25,7 @@ function App() {
           <a href="#libro">El libro</a>
           <a href="#creditos">Créditos</a>
           <a className="topbar__github" href="https://github.com/placeholder" target="_blank" rel="noreferrer">
-            <span aria-hidden="true">⌘</span> Repositorio
+            <FaGithub aria-hidden="true" /> Repositorio
           </a>
         </div>
       </nav>
@@ -31,7 +33,7 @@ function App() {
       <section className="hero" id="inicio" aria-labelledby="page-title">
         <div className="hero__copy">
           <p className="eyebrow">Pensamiento crítico · Sección FCV0</p>
-          <h1 id="page-title">Llanta,<br /><em>sillón</em><br />y traje.</h1>
+          <h1 id="page-title">La llanta, el sillón y los trajes</h1>
           <p className="hero__lede">Antología de relatos sobre percepción y pensamiento crítico.</p>
           <a className="text-link" href="#introduccion">Antes de abrir <ArrowIcon /></a>
         </div>
@@ -60,7 +62,7 @@ function App() {
             <h2 id="book-title">Pasa. <em>Mira.</em><br />Vuelve a pasar.</h2>
           </div>
           <a className="download-button" href={pdfPath} download>
-            <span className="download-button__icon" aria-hidden="true">↓</span>
+            <LuArrowDown className="download-button__icon" aria-hidden="true" />
             <span>Descargar<br /><b>PDF completo</b></span>
           </a>
         </div>
@@ -81,7 +83,7 @@ function App() {
             <a className="contributor" href={contributor.href} target="_blank" rel="noreferrer" key={`${contributor.name}-${index}`}>
               <span className="contributor__number">0{index + 1}</span>
               <span><strong>{contributor.name}</strong><small>{contributor.role}</small></span>
-              <span className="linkedin">in</span>
+              <span className="linkedin"><FaLinkedinIn aria-hidden="true" /></span>
             </a>
           ))}
         </div>
