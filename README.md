@@ -1,75 +1,74 @@
-# React + TypeScript + Vite
+# La llanta, el sillón y los trajes
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Libro interactivo desarrollado para el curso de Pensamiento Crítico de la Universidad CENFOTEC. El proyecto reúne una antología de relatos escritos a partir de una imagen polisémica: una misma imagen puede provocar interpretaciones, preguntas y narrativas diferentes.
 
-Currently, two official plugins are available:
+La aplicación convierte esos resultados en una experiencia editorial digital, con una introducción al proyecto, un visor de páginas con efecto de libro y acceso al PDF completo.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Qué incluye
 
-## React Compiler
+- Página de inicio con la identidad visual del proyecto y una introducción a la actividad.
+- Visor flipbook interactivo para leer `Cuentos_Imagen_Polisemica.pdf` dentro del sitio.
+- Controles del visor para navegación, sonido y descarga del documento.
+- Enlace para descargar el PDF completo.
+- Sección de créditos con las personas editoras y de diseño.
+- Diseño adaptable para distintos tamaños de pantalla.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologías
 
-## Expanding the ESLint configuration
+- React 19
+- TypeScript
+- Vite
+- DearFlip para el visor interactivo del PDF
+- React Icons
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Requisitos
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- Node.js y npm instalados.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Desarrollo local
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+Instala las dependencias y levanta el servidor de desarrollo:
 
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Vite mostrará en la terminal la dirección local de la aplicación, normalmente `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Comandos disponibles
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm run dev       # inicia el servidor de desarrollo
+npm run build     # comprueba TypeScript y genera la versión de producción
+npm run lint      # ejecuta ESLint
+npm run preview   # previsualiza la compilación de producción
 ```
+
+## Organización principal
+
+```text
+src/
+├── App.tsx                    # estructura de la página y contenido editorial
+├── Flipbook.tsx               # integración del visor DearFlip
+├── App.css                    # estilos de la experiencia principal
+├── index.css                  # estilos globales
+└── components/
+    └── ContributorBadge.tsx   # ficha visual de cada contribuyente
+
+public/
+├── Cuentos_Imagen_Polisemica.pdf  # libro que se muestra en el visor
+└── dflip/                         # recursos locales de DearFlip y PDF.js
+```
+
+## Contenido y recursos
+
+El PDF se sirve como un recurso estático desde `public/Cuentos_Imagen_Polisemica.pdf`. Si se sustituye por una nueva edición, debe conservarse esa ruta o actualizar la constante `pdfPath` en `src/App.tsx`. Los recursos de DearFlip dependen de la carpeta `public/dflip/`, por lo que esta carpeta debe mantenerse al desplegar el proyecto.
+
+## Créditos
+
+Proyecto académico creado por:
+
+- Max Alonso Guzmán Rodríguez — editor principal
+- Fabián Vargas Hidalgo — editor auxiliar
+- Emanuel Mena Araya — diseñador
